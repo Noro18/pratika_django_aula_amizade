@@ -11,6 +11,7 @@ class EstudanteForm(forms.ModelForm):
             "naran_estudante" : forms.TextInput(attrs={"class" : "form-control"}),
             "sexu" : forms.Select(attrs={"class" : "form-control"}),
             "idade" : forms.NumberInput(attrs={"class" : "form-control"}),
+            "data_moris" : forms.DateInput(attrs={"class" : "form-control", "type": "date"}),
             "email" : forms.EmailInput(attrs={"class" : "form-control"}),
             "departamento" : forms.Select(attrs={"class" : "form-control"}),
             "hela_fatin" : forms.TextInput(attrs={"class" : "form-control"}),

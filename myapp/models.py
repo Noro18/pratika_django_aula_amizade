@@ -14,6 +14,7 @@ class Estudante(models.Model):
     naran_estudante = models.CharField(max_length=100, blank=False, verbose_name="Naran Estudante")
     sexu = models.CharField(max_length=4, choices=[("Mane", "Mane"), ("Feto", "Feto")], default="Mane")
     idade = models.IntegerField()
+    data_moris = models.DateField()
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     hela_fatin = models.CharField(max_length=50, blank=True, default="", verbose_name="Hela Fatin")
     email = models.EmailField(max_length=50, blank=True)
