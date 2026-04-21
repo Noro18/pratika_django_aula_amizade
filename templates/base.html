@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>AULA AMIZADE DJANGO</title>
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container ms-auto">
+    <a class="navbar-brand" href="#">AULA AMIZADE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home <i class="bi bi-house-door-fill"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'lista' %}">Lista Estudante <i class="bi bi-people-fill"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'listadep' %}">Departamento <i class="bi bi-buildings-fill"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'konaba' %}">Kona-ba <i class="bi bi-info-circle-fill"></i></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            {{ user.username }}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item text-danger" href="{% url 'logout' %}">Logout <i class="bi bi-box-arrow-left"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container mt-5">
+    {% block content %}{% endblock %}
+  </div>
+
+    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src = "//cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
+</body>
+</html>

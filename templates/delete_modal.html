@@ -1,0 +1,20 @@
+<div class="modal fade" id="deleteModal{{ estudante.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Apaga Estudante</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Ita Bo'ot Hakarak Apaga Estudante ho naran <strong>{{ estudante.naran_estudante }}</strong> ?
+      </div>
+      <div class="modal-footer">
+        <form action="{% url 'delete' estudante.id %}">
+          {% csrf_token %}
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Kansela</button>
+          <button type="submit" class="btn btn-danger">Apaga</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

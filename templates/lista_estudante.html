@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        Lista Estudante
+    </div>
+    <div class="card-body">
+        <a href="{% url 'add' %}" class = "btn btn-sm bg-success text-white">Rejistu Estudante <i class="bi bi-person-plus-fill"></i></a>
+        <div class="table-responsive">
+            <table id="myTable" class="display">
+                <thead>
+                    <tr>
+                        <th>NRE</th>
+                        <th>Naran Estudante</th>
+                        <th>Sexu</th>
+                        <th>Idade</th>
+                        <th>Departamento</th>
+                        <th>Hela Fatin</th>
+                        <th>Email</th>
+                        <th>Numeru Telefone</th>
+                        <th>Ativu</th>
+                        <th>Imajen</th>
+                        <th>Asaun</th>
+                    </tr>
+                </thead>
+                {% for estudante in estudantes %}
+                <tr>
+                    <td>{{ estudante.nre }}</td>
+                    <td>{{ estudante.naran_estudante }}</td>
+                    <td>{{ estudante.sexu }}</td>
+                    <td>{{ estudante.idade }}</td>
+                    <td>{{ estudante.departamento }}</td>
+                    <td>{{ estudante.hela_fatin }}</td>
+                    <td>{{ estudante.email }}</td>
+                    <td>{{ estudante.nu_telefone }}</td>
+                    <td>
+                        {% if estudante.status == True %}
+                            <span class ="badge bg-success">Ativu</span>
+                        {% else %}
+                            <span class ="badge bg-danger">La Ativu</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <img src="{{ estudante.imajen.url }}"
+                            class="img-thumbnail"
+                            style="width: 60px; height: 60px; object-fit: cover;">
+                    </td>
+                    <td>
+                        <div class="d-flex gap-1">
+                            <a class = "btn btn-sm btn-warning"href="{% url 'edit' estudante.id %}"><i class="bi bi-pencil-fill"></i></a>
+                            <button class = "btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ estudante.id }}"><i class="bi bi-trash-fill"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                {% include "delete_modal.html" %}
+                {% endfor %}
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+
+{% endblock %}

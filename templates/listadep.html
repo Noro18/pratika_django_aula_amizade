@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        Departamentu
+    </div>
+    <ul class="list-group list-group-flush text-center">
+        {% for dep in deps %}
+            <li class="list-group-item">
+                <a href="{% url 'estudante-dep' dep.id %}">
+                    {{ dep.naran_dep }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
