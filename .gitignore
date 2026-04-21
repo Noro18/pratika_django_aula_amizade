@@ -1,3 +1,47 @@
 envi
 media
 db.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+.env/
+.venv/
+
+# Packages / Dependencies
+site-packages/
+*.egg-info/
+dist/
+build/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Static files (collected)
+staticfiles/
+static_root/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Migrations (optional - some teams commit these, some don't)
+# */migrations/
