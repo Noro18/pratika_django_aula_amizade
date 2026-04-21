@@ -12,7 +12,7 @@ def home(request):
 @login_required(login_url="loginpage")
 def lista_estudante(request):
     # select_related hodi prevene N+1 queries
-    return render(request, "lista_estudante.html", {"estudantes" : Estudante.objects.select_related("departamento").order_by("data_rejistu")}) 
+    return render(request, "lista_estudante.html", {"estudantes" : Estudante.objects.select_related("departamento")}) 
 
 @login_required(login_url="loginpage")
 def add_estudante(request):
